@@ -1,0 +1,966 @@
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight, Zap, Shield, Activity, Radio, Cpu, Settings } from 'lucide-react';
+
+const SiemensPolyDorosSlides = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      title: "Siemens Polydoros",
+      content: (
+        <div className="relative h-full flex items-center justify-center overflow-hidden">
+          {/* Animated background */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 opacity-90"></div>
+            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
+          </div>
+          
+          <div className="relative z-10 text-center space-y-8 text-white">
+            <div className="inline-block p-8 bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl mb-6 border border-white/30">
+              <Activity size={100} className="text-white drop-shadow-2xl" />
+            </div>
+            <h1 className="text-8xl font-black text-white mb-4 drop-shadow-2xl animate-fade-in">
+              POLYDOROS
+            </h1>
+            <div className="space-y-3 backdrop-blur-md bg-white/10 p-6 rounded-2xl border border-white/20">
+              <p className="text-4xl font-bold">Siemens Healthcare</p>
+              <p className="text-2xl font-light">Radiography & Fluoroscopy System</p>
+            </div>
+            <div className="flex justify-center gap-4 mt-8">
+              <span className="px-8 py-3 bg-white/20 backdrop-blur-md text-white rounded-full font-bold border border-white/30 shadow-xl">R/F System</span>
+              <span className="px-8 py-3 bg-white/20 backdrop-blur-md text-white rounded-full font-bold border border-white/30 shadow-xl">Multi-Purpose</span>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "System Overview",
+      content: (
+        <div className="h-full">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-3xl mb-8 shadow-2xl">
+            <h2 className="text-4xl font-black mb-2">Siemens Polydoros System</h2>
+            <p className="text-blue-100 text-lg">Advanced Radiographic & Fluoroscopic Imaging</p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-6">
+            {/* Animated System Demonstration */}
+            <div className="col-span-2 rounded-3xl overflow-hidden shadow-2xl border-4 border-gradient">
+              <div className="relative bg-gradient-to-br from-blue-900 via-slate-800 to-gray-900 min-h-[500px] p-8">
+                {/* Main System Layout with Animation */}
+                <div className="grid grid-cols-12 gap-6 h-full">
+                  
+                  {/* Left - Control Console */}
+                  <div className="col-span-3 space-y-4">
+                    <div className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-6 shadow-2xl border-2 border-blue-400/30 h-full flex flex-col justify-between">
+                      <div>
+                        <div className="bg-blue-500/20 w-16 h-16 rounded-xl mx-auto mb-4 flex items-center justify-center backdrop-blur-lg border border-blue-400/50 animate-pulse">
+                          <Settings size={35} className="text-blue-300" />
+                        </div>
+                        <h4 className="text-white font-bold text-center mb-3">Control Console</h4>
+                        
+                        {/* Animated Control buttons */}
+                        <div className="space-y-2 mt-4">
+                          <div className="bg-gradient-to-r from-green-600 to-green-700 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold shadow-lg animate-pulse" style={{animationDelay: '0s'}}>
+                            EXPOSURE
+                          </div>
+                          <div className="bg-gradient-to-r from-blue-600 to-blue-700 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold shadow-lg animate-pulse" style={{animationDelay: '0.5s'}}>
+                            FLUORO
+                          </div>
+                          <div className="bg-gradient-to-r from-purple-600 to-purple-700 h-6 rounded-lg flex items-center justify-center text-white text-xs font-bold shadow-lg animate-pulse" style={{animationDelay: '1s'}}>
+                            SPOT FILM
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Monitor screen with animation */}
+                      <div className="bg-gradient-to-br from-gray-900 to-black rounded-lg p-3 border-2 border-slate-600 mt-4">
+                        <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 h-24 rounded flex items-center justify-center">
+                          <Activity size={30} className="text-blue-400 opacity-70 animate-pulse" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Center & Right - Main R/F System with Animations */}
+                  <div className="col-span-9 relative">
+                    
+                    {/* Ceiling mount structure */}
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-3 bg-gradient-to-r from-gray-600 via-gray-500 to-gray-600 rounded-b-lg shadow-xl"></div>
+                    
+                    {/* Overhead X-Ray Tube Assembly with C-arm - ANIMATED */}
+                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20 transition-all duration-1000 animate-bounce" style={{animationIterationCount: 'infinite', animationDuration: '3s'}}>
+                      <div className="relative">
+                        {/* C-arm representation */}
+                        <div className="w-32 h-40 border-8 border-gradient-to-b from-gray-400 to-gray-600 rounded-full border-l-0 shadow-2xl relative">
+                          {/* X-ray tube head with radiation effect */}
+                          <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                            <div className="bg-gradient-to-br from-white to-gray-300 w-20 h-16 rounded-xl shadow-2xl border-2 border-gray-400 relative">
+                              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                <Radio size={24} className="text-red-500 animate-pulse" />
+                              </div>
+                              {/* Collimator with light */}
+                              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-12 h-6 bg-gradient-to-b from-gray-700 to-gray-900 rounded-b-lg border-2 border-yellow-500/50">
+                                {/* X-ray beam animation */}
+                                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-24 h-32 bg-gradient-to-b from-yellow-400/30 via-blue-400/20 to-transparent animate-pulse" style={{clipPath: 'polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%)'}}></div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Image Intensifier at bottom with glow */}
+                          <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
+                            <div className="bg-gradient-to-br from-gray-300 to-gray-500 w-24 h-12 rounded-lg shadow-2xl border-2 border-gray-600 flex items-center justify-center relative">
+                              <Cpu size={20} className="text-blue-600 animate-pulse" />
+                              {/* Detector active indicator */}
+                              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Examination Table with tilt animation */}
+                    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-4/5 transition-all duration-2000">
+                      {/* Table top */}
+                      <div className="bg-gradient-to-b from-gray-200 to-gray-300 h-4 rounded-lg shadow-2xl border-2 border-gray-400 relative transform hover:rotate-2 transition-transform duration-500">
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-600 text-xs font-bold">
+                          PATIENT TABLE
+                        </div>
+                        {/* Patient indicator */}
+                        <div className="absolute top-0 left-1/3 w-32 h-3 bg-blue-400/50 rounded-full animate-pulse"></div>
+                      </div>
+                      
+                      {/* Table base/support with movement */}
+                      <div className="flex justify-center mt-1">
+                        <div className="w-32 h-12 bg-gradient-to-b from-gray-500 to-gray-700 rounded-b-xl shadow-xl border-2 border-gray-600 relative">
+                          {/* Motor indicator */}
+                          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full animate-spin" style={{animationDuration: '2s'}}></div>
+                        </div>
+                      </div>
+                      
+                      {/* Floor base */}
+                      <div className="flex justify-center mt-1">
+                        <div className="w-48 h-2 bg-gradient-to-b from-gray-700 to-gray-900 rounded-full shadow-xl"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Animated side labels with arrows */}
+                    <div className="absolute top-20 right-4 bg-blue-500/80 backdrop-blur-lg px-4 py-2 rounded-lg shadow-xl border border-blue-300 animate-pulse">
+                      <p className="text-white font-bold text-xs">← X-Ray Tube</p>
+                      <p className="text-blue-100 text-xs">Active Imaging</p>
+                    </div>
+                    
+                    <div className="absolute bottom-32 left-4 bg-purple-500/80 backdrop-blur-lg px-4 py-2 rounded-lg shadow-xl border border-purple-300 animate-pulse" style={{animationDelay: '0.5s'}}>
+                      <p className="text-white font-bold text-xs">R/F Table →</p>
+                      <p className="text-purple-100 text-xs">Motorized</p>
+                    </div>
+                    
+                    {/* Radiation warning indicator */}
+                    <div className="absolute top-4 left-4 bg-yellow-500/90 backdrop-blur-lg px-4 py-3 rounded-xl shadow-xl border-2 border-yellow-400 animate-pulse">
+                      <div className="flex items-center gap-2">
+                        <div className="text-2xl">⚠️</div>
+                        <div>
+                          <p className="text-yellow-900 font-bold text-xs">RADIATION</p>
+                          <p className="text-yellow-800 text-xs">System Active</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Status indicators */}
+                    <div className="absolute top-4 right-1/4 space-y-2">
+                      <div className="bg-green-500/80 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-bold flex items-center gap-2 animate-pulse">
+                        <div className="w-2 h-2 bg-white rounded-full"></div>
+                        Power On
+                      </div>
+                      <div className="bg-blue-500/80 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-bold flex items-center gap-2 animate-pulse" style={{animationDelay: '0.3s'}}>
+                        <div className="w-2 h-2 bg-white rounded-full"></div>
+                        Ready
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Bottom info bar with animation */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-6 backdrop-blur-sm">
+                  <div className="grid grid-cols-4 gap-3">
+                    <div className="bg-blue-600/30 backdrop-blur-md p-3 rounded-xl border border-blue-400/40 hover:scale-105 transition-transform animate-pulse" style={{animationDelay: '0s'}}>
+                      <p className="text-blue-200 font-bold text-xs">⚡ Generator</p>
+                      <p className="text-white text-sm font-bold">80 kW Active</p>
+                    </div>
+                    <div className="bg-purple-600/30 backdrop-blur-md p-3 rounded-xl border border-purple-400/40 hover:scale-105 transition-transform animate-pulse" style={{animationDelay: '0.2s'}}>
+                      <p className="text-purple-200 font-bold text-xs">📺 Detector</p>
+                      <p className="text-white text-sm font-bold">Receiving</p>
+                    </div>
+                    <div className="bg-green-600/30 backdrop-blur-md p-3 rounded-xl border border-green-400/40 hover:scale-105 transition-transform animate-pulse" style={{animationDelay: '0.4s'}}>
+                      <p className="text-green-200 font-bold text-xs">🎯 Exposure</p>
+                      <p className="text-white text-sm font-bold">120 kV</p>
+                    </div>
+                    <div className="bg-orange-600/30 backdrop-blur-md p-3 rounded-xl border border-orange-400/40 hover:scale-105 transition-transform animate-pulse" style={{animationDelay: '0.6s'}}>
+                      <p className="text-orange-200 font-bold text-xs">🛏️ Position</p>
+                      <p className="text-white text-sm font-bold">Horizontal</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                  <Zap size={28} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-blue-900">High Performance</h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed">80kW generator with wide kV and mA range for versatile imaging applications</p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                  <Activity size={28} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-purple-900">Dual Modality</h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed">Combines radiography and fluoroscopy in one integrated system</p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Manufacturer Information",
+      content: (
+        <div className="h-full">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-3xl mb-8 shadow-2xl">
+            <h2 className="text-4xl font-black mb-2">Manufacturer Details</h2>
+            <p className="text-blue-100 text-lg">Medical Imaging Excellence Since 1847</p>
+          </div>
+          
+          {/* Company Logo Area */}
+          <div className="bg-gradient-to-br from-gray-100 to-blue-50 rounded-3xl p-8 mb-6 shadow-xl border-4 border-blue-500">
+            <div className="flex items-center justify-center gap-8">
+              <div className="text-center">
+                <div className="inline-block bg-white p-8 rounded-2xl shadow-lg mb-4">
+                  <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                    SIEMENS
+                  </div>
+                  <div className="text-xl text-gray-600 font-semibold mt-2">Healthineers</div>
+                </div>
+                <p className="text-2xl font-bold text-gray-800">Leading Medical Technology</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl shadow-xl p-6 border-l-4 border-blue-500 hover:scale-105 transition-transform">
+              <p className="text-sm font-semibold text-gray-500 uppercase mb-2">Company</p>
+              <p className="text-2xl font-bold text-gray-900">Siemens Healthcare GmbH</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-6 border-l-4 border-purple-500 hover:scale-105 transition-transform">
+              <p className="text-sm font-semibold text-gray-500 uppercase mb-2">Country of Origin</p>
+              <p className="text-2xl font-bold text-gray-900">🇩🇪 Germany</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-6 border-l-4 border-green-500 hover:scale-105 transition-transform">
+              <p className="text-sm font-semibold text-gray-500 uppercase mb-2">Manufacturing Period</p>
+              <p className="text-2xl font-bold text-gray-900">1990s - Early 2000s</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-6 border-l-4 border-indigo-500 hover:scale-105 transition-transform">
+              <p className="text-sm font-semibold text-gray-500 uppercase mb-2">Headquarters</p>
+              <p className="text-2xl font-bold text-gray-900">Erlangen, Germany</p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Main Purpose",
+      content: (
+        <div className="h-full">
+          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-3xl mb-8 shadow-2xl">
+            <h2 className="text-4xl font-black mb-2">Main Purpose</h2>
+            <p className="text-purple-100 text-lg">Dual Modality Diagnostic Imaging</p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            <div className="relative bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-3xl p-8 shadow-2xl overflow-hidden hover:scale-105 transition-transform">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+              <div className="relative z-10">
+                <div className="text-6xl mb-4">📸</div>
+                <h3 className="text-3xl font-bold mb-4">Radiography</h3>
+                <p className="text-blue-100 leading-relaxed text-lg">
+                  Static X-ray imaging for general diagnostic purposes including chest, skeletal, and abdominal examinations
+                </p>
+              </div>
+            </div>
+            
+            <div className="relative bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-3xl p-8 shadow-2xl overflow-hidden hover:scale-105 transition-transform">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+              <div className="relative z-10">
+                <div className="text-6xl mb-4">🎬</div>
+                <h3 className="text-3xl font-bold mb-4">Fluoroscopy</h3>
+                <p className="text-purple-100 leading-relaxed text-lg">
+                  Real-time dynamic imaging for contrast studies, guided procedures, and functional assessments
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 border-l-8 border-green-500 shadow-xl">
+            <h4 className="font-bold text-green-900 text-2xl mb-5">Primary Applications:</h4>
+            <div className="grid grid-cols-3 gap-6">
+              <div className="text-center bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-4xl mb-3">🫁</p>
+                <p className="font-semibold text-green-800 text-lg">GI Studies</p>
+                <p className="text-sm text-green-600 mt-2">Barium examinations</p>
+              </div>
+              <div className="text-center bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-4xl mb-3">💧</p>
+                <p className="font-semibold text-green-800 text-lg">Urological</p>
+                <p className="text-sm text-green-600 mt-2">IVP, cystography</p>
+              </div>
+              <div className="text-center bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-4xl mb-3">🦴</p>
+                <p className="font-semibold text-green-800 text-lg">Orthopedic</p>
+                <p className="text-sm text-green-600 mt-2">Skeletal imaging</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Technical Specifications",
+      content: (
+        <div className="h-full">
+          <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-8 rounded-3xl mb-6 shadow-2xl">
+            <h2 className="text-4xl font-black mb-2">Technical Specifications</h2>
+            <p className="text-indigo-100 text-lg">High-Performance Components</p>
+          </div>
+          
+          <div className="grid grid-cols-3 gap-5 mb-6">
+            <div className="relative bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl p-6 shadow-2xl text-center overflow-hidden hover:scale-105 transition-transform">
+              <div className="absolute inset-0 bg-white/5"></div>
+              <Zap size={50} className="mx-auto mb-3 relative z-10" />
+              <p className="text-sm font-medium opacity-90 mb-2 relative z-10">Generator Power</p>
+              <p className="text-5xl font-black relative z-10">80 kW</p>
+            </div>
+            
+            <div className="relative bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl p-6 shadow-2xl text-center overflow-hidden hover:scale-105 transition-transform">
+              <div className="absolute inset-0 bg-white/5"></div>
+              <Activity size={50} className="mx-auto mb-3 relative z-10" />
+              <p className="text-sm font-medium opacity-90 mb-2 relative z-10">Voltage Range</p>
+              <p className="text-5xl font-black relative z-10">40-150 kV</p>
+            </div>
+            
+            <div className="relative bg-gradient-to-br from-indigo-500 to-indigo-600 text-white rounded-2xl p-6 shadow-2xl text-center overflow-hidden hover:scale-105 transition-transform">
+              <div className="absolute inset-0 bg-white/5"></div>
+              <Shield size={50} className="mx-auto mb-3 relative z-10" />
+              <p className="text-sm font-medium opacity-90 mb-2 relative z-10">Current Range</p>
+              <p className="text-5xl font-black relative z-10">10-800 mA</p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-5">
+            <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 hover:shadow-2xl transition-shadow">
+              <p className="font-bold text-blue-900 mb-3 text-xl">⚡ X-Ray Tube</p>
+              <p className="text-gray-700 mb-1">• Dual focus: 0.6mm & 1.2mm</p>
+              <p className="text-gray-700 mb-1">• Heat capacity: 300,000-500,000 HU</p>
+              <p className="text-gray-700">• Oil-cooled rotating anode</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-purple-500 hover:shadow-2xl transition-shadow">
+              <p className="font-bold text-purple-900 mb-3 text-xl">📺 Image Intensifier</p>
+              <p className="text-gray-700 mb-1">• Size: 9" or 12"</p>
+              <p className="text-gray-700 mb-1">• Real-time fluoroscopy</p>
+              <p className="text-gray-700">• High resolution imaging</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500 hover:shadow-2xl transition-shadow">
+              <p className="font-bold text-green-900 mb-3 text-xl">🛏️ Table System</p>
+              <p className="text-gray-700 mb-1">• Motorized tilting R/F table</p>
+              <p className="text-gray-700 mb-1">• Multi-position capability</p>
+              <p className="text-gray-700">• Patient weight capacity: ~200kg</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-indigo-500 hover:shadow-2xl transition-shadow">
+              <p className="font-bold text-indigo-900 mb-3 text-xl">⚙️ Generator Type</p>
+              <p className="text-gray-700 mb-1">• High frequency</p>
+              <p className="text-gray-700 mb-1">• Precise output control</p>
+              <p className="text-gray-700">• Anatomical programming (APR)</p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Control Panel Functions",
+      content: (
+        <div className="h-full">
+          <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-8 rounded-3xl mb-6 shadow-2xl">
+            <h2 className="text-4xl font-black mb-2">Main Control Buttons</h2>
+            <p className="text-green-100 text-lg">Essential Operating Controls</p>
+          </div>
+          
+          <div className="space-y-4">
+            <div className="bg-white rounded-2xl shadow-xl p-6 border-l-8 border-red-500 hover:shadow-2xl hover:scale-102 transition-all">
+              <div className="flex items-center gap-5">
+                <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white font-black text-3xl shadow-xl flex-shrink-0">
+                  1
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">EXPOSURE Button</h3>
+                  <p className="text-gray-600 text-lg">Initiates X-ray exposure for radiographic imaging. Primary trigger for capturing static images.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-6 border-l-8 border-blue-500 hover:shadow-2xl hover:scale-102 transition-all">
+              <div className="flex items-center gap-5">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white font-black text-3xl shadow-xl flex-shrink-0">
+                  2
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">FLUORO Button</h3>
+                  <p className="text-gray-600 text-lg">Activates fluoroscopy mode for real-time imaging. Used for dynamic studies and guided procedures.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-6 border-l-8 border-purple-500 hover:shadow-2xl hover:scale-102 transition-all">
+              <div className="flex items-center gap-5">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-black text-3xl shadow-xl flex-shrink-0">
+                  3
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">SPOT FILM Button</h3>
+                  <p className="text-gray-600 text-lg">Captures high-quality static images during fluoroscopy. Records specific findings.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-6 border-l-8 border-green-500 hover:shadow-2xl hover:scale-102 transition-all">
+              <div className="flex items-center gap-5">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center text-white font-black text-3xl shadow-xl flex-shrink-0">
+                  4
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">COLLIMATOR Control</h3>
+                  <p className="text-gray-600 text-lg">Adjusts radiation field size. Limits beam to area of interest for dose optimization.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-6 border-l-8 border-orange-500 hover:shadow-2xl hover:scale-102 transition-all">
+              <div className="flex items-center gap-5">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-black text-3xl shadow-xl flex-shrink-0">
+                  5
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">TABLE TILT Control</h3>
+                  <p className="text-gray-600 text-lg">Motorized table positioning. Adjusts patient position from vertical to horizontal (±90°).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Power Supply & Features",
+      content: (
+        <div className="h-full">
+          <div className="bg-gradient-to-r from-yellow-600 to-amber-600 text-white p-8 rounded-3xl mb-6 shadow-2xl">
+            <h2 className="text-4xl font-black mb-2">Power Supply & System Features</h2>
+            <p className="text-yellow-100 text-lg">Electrical Requirements & Advanced Capabilities</p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            {/* Power Supply */}
+            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-6 shadow-xl border-l-4 border-red-500">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-14 h-14 bg-red-500 rounded-xl flex items-center justify-center">
+                  <Zap size={32} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-red-900">Power Supply</h3>
+              </div>
+              <div className="space-y-2 text-gray-700">
+                <p className="flex justify-between"><span className="font-semibold">Voltage:</span> <span>380-480V, 3-phase</span></p>
+                <p className="flex justify-between"><span className="font-semibold">Frequency:</span> <span>50/60 Hz</span></p>
+                <p className="flex justify-between"><span className="font-semibold">Power Consumption:</span> <span>~30-40 kVA</span></p>
+                <p className="flex justify-between"><span className="font-semibold">Circuit Breaker:</span> <span>63-80A recommended</span></p>
+              </div>
+            </div>
+            
+            {/* Dimensions */}
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 shadow-xl border-l-4 border-blue-500">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center text-white text-2xl">
+                  📏
+                </div>
+                <h3 className="text-2xl font-bold text-blue-900">Dimensions</h3>
+              </div>
+              <div className="space-y-2 text-gray-700">
+                <p className="flex justify-between"><span className="font-semibold">Room Size:</span> <span>5m x 6m minimum</span></p>
+                <p className="flex justify-between"><span className="font-semibold">Table Length:</span> <span>~2.5m</span></p>
+                <p className="flex justify-between"><span className="font-semibold">Ceiling Height:</span> <span>3m minimum</span></p>
+                <p className="flex justify-between"><span className="font-semibold">Total Weight:</span> <span>~800-1000 kg</span></p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Additional Features */}
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 shadow-xl">
+            <h3 className="text-2xl font-bold text-purple-900 mb-4">🎯 System Features</h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-xl shadow-md">
+                <p className="font-bold text-purple-800 mb-1">Generator Type</p>
+                <p className="text-sm text-gray-700">High-frequency, 3-phase</p>
+              </div>
+              <div className="bg-white p-4 rounded-xl shadow-md">
+                <p className="font-bold text-purple-800 mb-1">Cooling System</p>
+                <p className="text-sm text-gray-700">Oil-cooled tube with fan</p>
+              </div>
+              <div className="bg-white p-4 rounded-xl shadow-md">
+                <p className="font-bold text-purple-800 mb-1">Maximum mAs</p>
+                <p className="text-sm text-gray-700">500-800 mAs per exposure</p>
+              </div>
+              <div className="bg-white p-4 rounded-xl shadow-md">
+                <p className="font-bold text-purple-800 mb-1">Focal Spot Size</p>
+                <p className="text-sm text-gray-700">0.6mm / 1.2mm dual focus</p>
+              </div>
+              <div className="bg-white p-4 rounded-xl shadow-md">
+                <p className="font-bold text-purple-800 mb-1">SID Range</p>
+                <p className="text-sm text-gray-700">100-180 cm adjustable</p>
+              </div>
+              <div className="bg-white p-4 rounded-xl shadow-md">
+                <p className="font-bold text-purple-800 mb-1">Image Format</p>
+                <p className="text-sm text-gray-700">Digital or film-based</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Key Features",
+      content: (
+        <div className="h-full">
+          <div className="bg-gradient-to-r from-pink-600 to-rose-600 text-white p-8 rounded-3xl mb-6 shadow-2xl">
+            <h2 className="text-4xl font-black mb-2">Advanced Features</h2>
+            <p className="text-pink-100 text-lg">Innovative Technology for Superior Imaging</p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-5">
+            <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform"></div>
+              <div className="relative z-10">
+                <div className="text-5xl mb-4">⚡</div>
+                <h3 className="text-xl font-bold text-blue-900 mb-3">Anatomical Programming (APR)</h3>
+                <p className="text-gray-700">Pre-programmed exposure parameters for different body parts ensuring optimal image quality</p>
+              </div>
+            </div>
+            
+            <div className="relative bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform"></div>
+              <div className="relative z-10">
+                <div className="text-5xl mb-4">🔄</div>
+                <h3 className="text-xl font-bold text-purple-900 mb-3">Pulsed Fluoroscopy</h3>
+                <p className="text-gray-700">Reduced radiation dose by intermittent X-ray pulses while maintaining image quality</p>
+              </div>
+            </div>
+            
+            <div className="relative bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/10 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform"></div>
+              <div className="relative z-10">
+                <div className="text-5xl mb-4">✨</div>
+                <h3 className="text-xl font-bold text-green-900 mb-3">Automatic Brightness Control</h3>
+                <p className="text-gray-700">Auto-adjusts exposure parameters to maintain consistent image brightness during fluoroscopy</p>
+              </div>
+            </div>
+            
+            <div className="relative bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-orange-500/10 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform"></div>
+              <div className="relative z-10">
+                <div className="text-5xl mb-4">🎯</div>
+                <h3 className="text-xl font-bold text-orange-900 mb-3">Multi-Field Collimation</h3>
+                <p className="text-gray-700">Precise beam limitation system to reduce unnecessary radiation exposure</p>
+              </div>
+            </div>
+            
+            <div className="relative bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-500/10 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform"></div>
+              <div className="relative z-10">
+                <div className="text-5xl mb-4">🔧</div>
+                <h3 className="text-xl font-bold text-indigo-900 mb-3">Motorized Positioning</h3>
+                <p className="text-gray-700">Precise automated movement of tube, table, and image intensifier for efficient workflow</p>
+              </div>
+            </div>
+            
+            <div className="relative bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-pink-500/10 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform"></div>
+              <div className="relative z-10">
+                <div className="text-5xl mb-4">📊</div>
+                <h3 className="text-xl font-bold text-pink-900 mb-3">Anti-Scatter Grid</h3>
+                <p className="text-gray-700">Bucky system removes scattered radiation for improved image contrast and clarity</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Common Problems",
+      content: (
+        <div className="h-full">
+          <div className="bg-gradient-to-r from-red-600 to-rose-600 text-white p-8 rounded-3xl mb-6 shadow-2xl">
+            <h2 className="text-4xl font-black mb-2">Common Problems</h2>
+            <p className="text-red-100 text-lg">Issues from Inadequate Maintenance</p>
+          </div>
+          
+          <div className="space-y-4">
+            <div className="bg-white rounded-2xl shadow-xl p-5 border-l-8 border-red-500 hover:scale-102 transition-transform">
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-red-500 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0">
+                  ⚠️
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">X-Ray Tube Failure</h3>
+                  <p className="text-gray-700">Overheating due to excessive use without cooling periods. Filament burnout or anode damage requiring costly tube replacement.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-5 border-l-8 border-orange-500 hover:scale-102 transition-transform">
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-orange-500 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0">
+                  🔌
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Generator Malfunction</h3>
+                  <p className="text-gray-700">Inconsistent power output, exposure errors, or complete failure due to capacitor degradation or high voltage cable issues.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-5 border-l-8 border-yellow-500 hover:scale-102 transition-transform">
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0">
+                  📺
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Image Intensifier Degradation</h3>
+                  <p className="text-gray-700">Loss of brightness, image lag, or distortion. Vacuum loss or phosphor deterioration causing poor fluoroscopy quality.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-5 border-l-8 border-purple-500 hover:scale-102 transition-transform">
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-purple-500 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0">
+                  🔧
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Mechanical Movement Issues</h3>
+                  <p className="text-gray-700">Table or tube positioning failures due to worn motors, damaged gears, or lack of lubrication causing operational delays.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-5 border-l-8 border-blue-500 hover:scale-102 transition-transform">
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0">
+                  ⚡
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Collimator & Grid Problems</h3>
+                  <p className="text-gray-700">Misalignment causing improper field coverage, grid damage reducing image quality, or light field inaccuracy.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-5 border-l-8 border-green-500 hover:scale-102 transition-transform">
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0">
+                  🛡️
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Radiation Safety Issues</h3>
+                  <p className="text-gray-700">Leakage radiation from damaged shielding, malfunctioning dose meters, or failed safety interlocks compromising staff safety.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Maintenance Importance",
+      content: (
+        <div className="h-full">
+          <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-8 rounded-3xl mb-6 shadow-2xl">
+            <h2 className="text-4xl font-black mb-2">Importance of Equipment Maintenance</h2>
+            <p className="text-green-100 text-lg">Ensuring Optimal Performance & Patient Safety</p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all">
+              <div className="text-4xl mb-3">🎯</div>
+              <h3 className="text-xl font-bold text-blue-900 mb-3">Diagnostic Accuracy</h3>
+              <p className="text-gray-700 leading-relaxed">Regular maintenance ensures consistent image quality, proper calibration, and reliable diagnostic results for patient care.</p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all">
+              <div className="text-4xl mb-3">🛡️</div>
+              <h3 className="text-xl font-bold text-purple-900 mb-3">Patient Safety</h3>
+              <p className="text-gray-700 leading-relaxed">Prevents excessive radiation exposure, ensures proper shielding, and maintains safety interlocks protecting patients during procedures.</p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all">
+              <div className="text-4xl mb-3">💰</div>
+              <h3 className="text-xl font-bold text-green-900 mb-3">Cost Efficiency</h3>
+              <p className="text-gray-700 leading-relaxed">Preventive maintenance reduces expensive breakdowns, extends equipment lifespan, and minimizes costly emergency repairs.</p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all">
+              <div className="text-4xl mb-3">⚡</div>
+              <h3 className="text-xl font-bold text-orange-900 mb-3">Operational Efficiency</h3>
+              <p className="text-gray-700 leading-relaxed">Reduces downtime, maintains workflow productivity, and ensures equipment availability for patient examinations.</p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all">
+              <div className="text-4xl mb-3">👨‍⚕️</div>
+              <h3 className="text-xl font-bold text-red-900 mb-3">Staff Protection</h3>
+              <p className="text-gray-700 leading-relaxed">Maintains radiation shielding integrity, ensures proper safety systems, and protects healthcare workers from occupational hazards.</p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all">
+              <div className="text-4xl mb-3">📋</div>
+              <h3 className="text-xl font-bold text-indigo-900 mb-3">Regulatory Compliance</h3>
+              <p className="text-gray-700 leading-relaxed">Meets legal requirements, passes inspections, and maintains licenses for healthcare facility operations.</p>
+            </div>
+          </div>
+          
+          {/* SDG3 Connection */}
+          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-3xl p-6 shadow-2xl">
+            <div className="flex items-center gap-4">
+              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center flex-shrink-0">
+                <span className="text-4xl">🎯</span>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-2">SDG 3: Good Health and Well-being</h3>
+                <p className="text-blue-100 leading-relaxed">
+                  Proper equipment maintenance directly supports <strong>SDG Goal 3</strong> by ensuring reliable diagnostic services, reducing patient risks, promoting workplace safety, and maintaining a healthy ecosystem within hospital environments for quality healthcare delivery.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Safety Features",
+      content: (
+        <div className="h-full">
+          <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white p-8 rounded-3xl mb-6 shadow-2xl">
+            <h2 className="text-4xl font-black mb-2">Radiation Safety</h2>
+            <p className="text-red-100 text-lg">Patient & Operator Protection Systems</p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-5">
+            <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-red-500 hover:scale-105 transition-transform">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                  <Shield size={28} className="text-red-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Lead Shielding</h3>
+              </div>
+              <p className="text-gray-700">Integrated lead barriers and protective curtains to minimize scatter radiation exposure</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-orange-500 hover:scale-105 transition-transform">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">
+                  ⏱️
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Exposure Timer</h3>
+              </div>
+              <p className="text-gray-700">Precise timing control prevents excessive radiation exposure with automatic cutoff</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-yellow-500 hover:scale-105 transition-transform">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">
+                  🚨
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Warning Indicators</h3>
+              </div>
+              <p className="text-gray-700">Visual and audible alerts during X-ray exposure to warn personnel in the room</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-green-500 hover:scale-105 transition-transform">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">
+                  📏
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Dose Monitoring</h3>
+              </div>
+              <p className="text-gray-700">Real-time dose tracking and display to ensure ALARA principles compliance</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-blue-500 hover:scale-105 transition-transform">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">
+                  🎯
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Beam Filtration</h3>
+              </div>
+              <p className="text-gray-700">Removes low-energy photons to reduce patient skin dose while maintaining quality</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-purple-500 hover:scale-105 transition-transform">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">
+                  🔒
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Safety Interlocks</h3>
+              </div>
+              <p className="text-gray-700">Prevents exposure when safety conditions not met or doors are open</p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Conclusion",
+      content: (
+        <div className="relative h-full flex items-center justify-center overflow-hidden">
+          {/* Animated background */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 opacity-95"></div>
+            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{animationDelay: '2s'}}></div>
+            <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{animationDelay: '4s'}}></div>
+          </div>
+          
+          <div className="relative z-10 w-full space-y-8 text-white">
+            <div className="text-center">
+              <div className="inline-block p-8 bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl mb-6 border border-white/30">
+                <Activity size={80} className="text-white drop-shadow-2xl" />
+              </div>
+              <h2 className="text-6xl font-black mb-4 drop-shadow-2xl">
+                Siemens Polydoros
+              </h2>
+              <p className="text-3xl font-semibold drop-shadow-lg">Complete R/F Diagnostic Solution</p>
+            </div>
+            
+            <div className="bg-white/20 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/30">
+              <h3 className="text-3xl font-bold text-center mb-6">Summary</h3>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl">
+                  <p className="font-semibold text-xl mb-2">📍 Main Purpose:</p>
+                  <p className="leading-relaxed">Dual-modality imaging system combining radiography and fluoroscopy for comprehensive diagnostic capabilities</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl">
+                  <p className="font-semibold text-xl mb-2">🏭 Manufacturer:</p>
+                  <p className="leading-relaxed">Siemens Healthcare GmbH, Erlangen, Germany (1990s - Early 2000s)</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl">
+                  <p className="font-semibold text-xl mb-2">⚡ Key Features:</p>
+                  <p className="leading-relaxed">80kW generator, dual focus tube, APR, pulsed fluoroscopy, motorized positioning</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl">
+                  <p className="font-semibold text-xl mb-2">🎯 Applications:</p>
+                  <p className="leading-relaxed">GI studies, urological exams, orthopedic imaging, contrast procedures</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-4 gap-4">
+              <div className="bg-white/20 backdrop-blur-md text-white p-6 rounded-2xl text-center shadow-xl border border-white/30 hover:scale-110 transition-transform">
+                <p className="text-4xl mb-3">🎯</p>
+                <p className="font-bold text-lg">Versatile</p>
+              </div>
+              <div className="bg-white/20 backdrop-blur-md text-white p-6 rounded-2xl text-center shadow-xl border border-white/30 hover:scale-110 transition-transform">
+                <p className="text-4xl mb-3">⚡</p>
+                <p className="font-bold text-lg">Efficient</p>
+              </div>
+              <div className="bg-white/20 backdrop-blur-md text-white p-6 rounded-2xl text-center shadow-xl border border-white/30 hover:scale-110 transition-transform">
+                <p className="text-4xl mb-3">🛡️</p>
+                <p className="font-bold text-lg">Safe</p>
+              </div>
+              <div className="bg-white/20 backdrop-blur-md text-white p-6 rounded-2xl text-center shadow-xl border border-white/30 hover:scale-110 transition-transform">
+                <p className="text-4xl mb-3">💪</p>
+                <p className="font-bold text-lg">Reliable</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 p-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="bg-white rounded-3xl shadow-2xl p-12 min-h-[700px] flex flex-col overflow-hidden">
+          <div className="flex-1">
+            {slides[currentSlide].content}
+          </div>
+          
+          <div className="mt-8 flex items-center justify-between pt-8 border-t-2 border-gray-100">
+            <button
+              onClick={prevSlide}
+              className="flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed font-semibold hover:scale-105"
+              disabled={currentSlide === 0}
+            >
+              <ChevronLeft size={24} />
+              <span>Previous</span>
+            </button>
+            
+            <div className="text-center">
+              <p className="text-gray-700 font-bold text-lg mb-3">
+                {currentSlide + 1} / {slides.length}
+              </p>
+              <div className="flex space-x-2 justify-center">
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`h-3 rounded-full transition-all ${
+                      index === currentSlide
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 w-12 shadow-lg'
+                        : 'bg-gray-300 hover:bg-gray-400 w-3'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+            
+            <button
+              onClick={nextSlide}
+              className="flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl hover:from-purple-700 hover:to-purple-800 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed font-semibold hover:scale-105"
+              disabled={currentSlide === slides.length - 1}
+            >
+              <span>Next</span>
+              <ChevronRight size={24} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SiemensPolyDorosSlides;
